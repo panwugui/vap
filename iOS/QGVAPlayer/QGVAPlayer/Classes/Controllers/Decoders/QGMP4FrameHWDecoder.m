@@ -453,6 +453,11 @@ NSString *const QGMP4HWDErrorDomain = @"QGMP4HWDErrorDomain";
     attrs = CFDictionaryCreate(NULL, keys, values, 1, NULL, NULL);
     
     if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
+        if ([UIDevice currentDevice].systemVersion.floatValue >= 16.1 && [UIDevice currentDevice].systemVersion.floatValue <= 16.2) {
+            const void *keys1[] = {kCVPixelBufferMetalCompatibilityKey};
+            attrs = CFDictionaryCreate(NULL, keys1, values, 1, NULL, NULL);
+        }
+        
         _status = VTDecompressionSessionCreate(kCFAllocatorDefault,
                                                _mFormatDescription,
                                                NULL,
