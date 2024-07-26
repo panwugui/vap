@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   puts "Pod Install #{spec.name} Source"
 
   spec.author             = { "tencent" => "tencent@gmail.com" }
-  spec.source       = { :git => "https://github.com/Tencent/vap.git", :tag => "iOS#{spec.version}"}
+  spec.source       = { :git => "https://github.com/Tencent/vap.git", :tag => spec.version }
   spec.source_files = 'iOS/QGVAPlayer/QGVAPlayer/**/*.{h,m}', 'iOS/QGVAPlayer/QGVAPlayer/Shaders/QGHWDShaders.metal'
   spec.frameworks = "Metal", "MetalKit"
   spec.requires_arc = true
